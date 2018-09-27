@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taka's portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+ <div id="app">
+   <v-app >
+
+    <!-- ツールバー -->
+    <v-toolbar>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar>
+
+    <v-content>
+
+      <section>
+        <v-parallax :src="topImg" height="600">
+          <v-layout column align-center justify-center>
+            <h1 class="white--text mb-2 display-1 text-xs-center font-weight-light">Welcome to Taka's portfolio.</h1>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <!-- プロフィール -->
+      <section>
+        <v-layout column wrap class="my-3 mt-5" align-center>
+          <v-flex xs12>
+            <div class="text-xs-center">
+              <h2 class="headline">Profile</h2>
+            </div>
+          </v-flex>
+
+          <v-flex xs12 pt-3>
+            <v-avatar size="200px">
+              <v-img :src="iconImg" alt="my_icon"></v-img>
+            </v-avatar>
+          </v-flex>
+
+          <v-flex xs12>
+            <v-container grid-list-xl>
+              <v-layout row wrap justify-start>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2">mood</v-icon>
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-xs-center">I'm taka.</div>
+                    </v-card-title>
+                    <v-card-text>
+                      　はじめまして、都内でエンジニアをしておりますタカと申します。
+                      1996年生まれの24歳で、エンジニア4年目です。<br>
+                      　新卒で入社したSESの会社に約3年ほど勤め、エンジニアとしての成長を目的に転職。
+                      現在はAWS上に構築されたマイクロサービスのチケットEC開発・改修を担当しています。
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2">laptop_mac</v-icon>
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">Experience</div>
+                    </v-card-title>
+                    <v-card-text>
+                      　WEBシステム、WEBサービスのサーバサイド開発を多く経験してきました。
+                      Javaでの開発経験がメインですが、ScalaやHTML、CSSの経験もあります。<br>
+                      　また、設計工程も経験しており、基本設計〜詳細設計なども任せていただくことができます。
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2">directions_run</v-icon>
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-xs-center">Self propellent</div>
+                    </v-card-title>
+                    <v-card-text>
+                      　現状に満足せず、常に向上心を持ち続けることを心がけており、
+                      気になった技術やツールは積極的に試してみるようにしています。<br>
+                      　また、学んだことなどは技術ブログに投稿するなど、アウトプットも心がけています。
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
+      </section>
+
+      <!-- スキル -->
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap align-center justify-start>
+            <v-flex column xs12>
+              <div class="text-xs-center">
+                <h2 class="headline">Skill / Tools</h2>
+              </div>
+            </v-flex>
+            <v-flex xs12>
+              <div class="text-xs-center">
+                <p>coming soon...</p>
+              </div>
+              </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <!-- このサイトについて -->
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center>
+            <v-flex column xs12>
+              <div class="text-xs-center">
+                <h2 class="headline">About</h2>
+              </div>
+            </v-flex>
+            <v-flex xs12 sm6 md4>
+              <v-card class="elevation-0 transparent">
+                <v-card-text class="text-xs-center">
+                  当ページは以下の技術を用いて作成しています。
+                </v-card-text>
+                <v-container fluid grid-list-xl>
+                  <v-layout row wrap>
+                    <v-flex v-for="(icon, index) in isons" :key="index">
+                      <v-card class="elevation-0 transparent">
+                        <v-img :src="icon" aspect-ratio="1"></v-img>
+                      </v-card>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <!-- コンタクト -->
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center>
+            <v-flex xs12>
+              <div class="text-xs-center"><h2 class="headline">Contact</h2></div>
+            </v-flex>
+            <v-flex row wrap>
+              <v-container grid-list-xl>
+                <v-layout wrap justify-center>
+                  <v-flex xs1 v-for="(item, index) in contacts" :key="index">
+                    <v-card :ripple="true" class="elevation-0 transparent text-xs-center" :href="item.linkPath" target="_blank">
+                      <v-avatar>
+                        <v-hover>
+                          <v-img slot-scope="{ hover }" :src="item.path" aspect-ratio="1" :class="`elevation-${hover ? 6 : 0}`"></v-img>
+                        </v-hover>
+                      </v-avatar>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <v-footer></v-footer>
+    </v-content>
+  </v-app>
+ </div>
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script>
+   new Vue({
+    el: '#app',
+    computed: {
+      title(){ return "Taka's portfolio"; },
+      topImg() {
+        return "./img/pexels-photo-450035.jpeg";
+      },
+      iconImg() {
+        return "./img/my_icon.jpg";
+      },
+      isons() {
+        return ["./img/html5_icon.png", "./img/css3_icon.png", "./img/vue_icon.png", "./img/vuetify_icon.png"];
+      }, 
+      contacts() {
+        return [
+          { "path" : "./img/github-logo.png", "linkPath" : "https://github.com/taka521" },
+          { "path" : "./img/hatenablog-logo.png", "linkPath" : "http://tk5-21.hatenablog.com/" }
+        ]
+      }
+    }
+  })
+ </script>
+</body>
+</html>
