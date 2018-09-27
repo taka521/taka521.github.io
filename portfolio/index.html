@@ -150,11 +150,16 @@
             <v-flex xs12>
               <div class="text-xs-center"><h2 class="headline">Contact</h2></div>
             </v-flex>
-            <v-flex row wrap>
-              <v-container grid-list-xl>
-                <v-layout wrap justify-center>
-                  <v-flex xs1 v-for="(item, index) in contacts" :key="index">
-                    <v-card :ripple="true" class="elevation-0 transparent text-xs-center" :href="item.linkPath" target="_blank">
+            <v-flex xs7 sm2>
+              <v-container fluid grid-list-xl>
+                <v-layout row wrap>
+                  <v-flex v-for="(item, index) in contacts" :key="index">
+                    <v-card 
+                      :ripple="true" 
+                      class="elevation-0 transparent" 
+                      :href="item.linkPath" 
+                      target="_blank"
+                      style="text-align:center">
                       <v-avatar>
                         <v-hover>
                           <v-img slot-scope="{ hover }" :src="item.path" aspect-ratio="1" :class="`elevation-${hover ? 6 : 0}`"></v-img>
